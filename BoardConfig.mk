@@ -158,11 +158,13 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8953
 TARGET_KERNEL_CONFIG := sleepy_defconfig
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_USE_LATEST_CLANG := true
 
 # Clang Version
-TARGET_KERNEL_CLANG_VERSION := proton
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+#TARGET_KERNEL_CLANG_VERSION := proton-clang
+#TARGET_KERNEL_CLANG_PATH := /home/guillermo/hadk/prebuilts/clang/host/linux-x86/proton-clang/bin
+#KERNEL_TOOLCHAIN := /home/guillermo/hadk/prebuilts/clang/host/linux-x86/proton-clang/bin
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
@@ -203,12 +205,12 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
-TARGET_EXCLUDE_QCOM_SEPOLICY := true
+#TARGET_EXCLUDE_QCOM_SEPOLICY := true
 
 # Sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+#BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Telephony
 TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
